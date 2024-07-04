@@ -64,9 +64,14 @@ const Login = () => {
           <button type="submit" className="login-button">
             Login
           </button>
+          <h2 className="login-footer">
+            <Link to="/signup" className="login-link">
+              Create a new account
+            </Link>
+          </h2>
         </form>
       </div>
-      
+
       <div className="login-about-container">
         <p className="login-about-title">About</p>
         <h1 className="login-about-heading">Evangadi Networks</h1>
@@ -80,11 +85,11 @@ const Login = () => {
           Whether you are willing to share your knowledge or you are just
           looking to meet mentors of your own, please start by joining the
           network here.
-          <h2 className="login-footer">
+          {/* <h2 className="login-footer">
             <Link to="/signup" className="login-link">
               Create a new account
             </Link>
-          </h2>
+          </h2> */}
         </p>
       </div>
     </div>
