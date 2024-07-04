@@ -1,12 +1,93 @@
+
+/* Nav */
 /* Navigation container */
-body,html{
- width: 100%;
- height: 100%;
- margin: 0;
- padding: 0;
- overflow-x:hidden;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
+
 .nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: white;
+  color: #ffffff;
+}
+
+.nav-logo img {
+  max-width: 100%; /* Ensures the logo image is responsive */
+  height: auto; /* Maintains aspect ratio */
+  padding-left: 40px; /* Adjust as per your design */
+}
+
+.nav-right {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between items */
+  margin-right: 100px; /* Adjust margin as per your design */
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3498db;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #2980b9;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .nav-container {
+    flex-direction: column; /* Stack items vertically */
+    padding: 12px 16px; /* Reduce padding for smaller screens */
+  }
+
+  .nav-logo img {
+    padding-left: 0; /* Reset padding */
+    margin-bottom: 10px; /* Add spacing between logo and other items */
+  }
+
+  .nav-right {
+    width: 100%; /* Take full width */
+    justify-content: space-around; /* Adjust alignment */
+    margin-right: 0; /* Reset margin */
+  }
+
+  .nav-link {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .nav-button {
+    padding: 8px 12px; /* Adjust button padding */
+  }
+}
+
+
+/* .nav-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -54,7 +135,7 @@ body,html{
 
 .nav-button:hover {
   background-color: #2980b9;
-}
+} */
 
 
 /* user context css */
@@ -73,7 +154,6 @@ body,html{
 
 
 /* Login page */
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -81,16 +161,18 @@ body,html{
   padding: 20px;
   min-height: 100vh;
   background-color: whitesmoke;
+  flex-wrap: wrap;
 }
 
-.login-form-container {
+.login-form-container,
+.login-about-container {
   max-width: 400px;
   width: 100%;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-right: 20px;
+  margin: 10px;
 }
 
 .login-title {
@@ -183,135 +265,52 @@ body,html{
   color: #3498db;
 }
 
-/* 
-.login-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding-left: 300px;
-  background-color: white;
-  
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .login-form-container,
+  .login-about-container {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-subtitle {
+    font-size: 12px;
+  }
+
+  .login-label {
+    font-size: 12px;
+  }
+
+  .login-input {
+    font-size: 12px;
+  }
+
+  .login-button {
+    font-size: 14px;
+  }
+
+  .login-about-title,
+  .login-about-heading {
+    font-size: 16px;
+  }
+
+  .login-about-text {
+    font-size: 12px;
+  }
+
+  .login-footer {
+    font-size: 14px;
+  }
 }
 
-.login-about-container  {
-  color: rgb(153, 63, 63);
-  text-decoration: solid;
-  background-color: #777;
-  
-}
-
-.login-about-title {
-  color: rgb(195, 16, 16);
-  font-size: xx-small;
-}
- .h1 {
-  color: rgb(195, 16, 16);
-  font-size: 40px;
-}
-
-.login-about-container h2 {
-  color: rgb(80, 80, 56);
-  font-size: 20px;
-  padding-top: 10px;
-  
-}
-
-.login-form-container {
-  flex: 1;
-  margin-right: 40px;
-  background-color: #f9f9f9;
-  padding-bottom: 20px;
-}
-
-.login-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.login-subtitle {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #666;
-}
-
-.login-link {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.login-link:hover {
-  text-decoration: underline;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-label {
-  margin-bottom: 5px;
-  font-size: 14px;
-  color: #555;
-}
-
-.login-input {
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.login-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.login-button:hover {
-  background-color: #0056b3;
-}
-
-.login-footer {
-  margin-top: 20px;
-  margin-bottom: 350px;
-  font-size: 14px;
-  color: #666;
-}
-
-.login-about-container {
-  flex: 1;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-about-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.login-about-heading {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.login-about-text {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
-} */
 
 /* SignUp Page */
 
